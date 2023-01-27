@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.time {
+    font-size: 60px;
+    font-family: Verdana;
+}
+
+.btn {
+    font-family: Verdana;
+}
