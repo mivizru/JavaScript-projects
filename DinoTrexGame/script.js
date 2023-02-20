@@ -13,31 +13,31 @@ document.addEventListener(e, function(e) {
 
     if(cactus.classList != 'cactusMov') {
     
-        cactus.classList.add('cactusMov')
+        cactus.classList.add('cactusMov');
 
     }
 
-    setTimeout(function() {
+    pointsTimer = setTimeout(function() {
 
-        points.innerHTML++
+        points.innerHTML++;
 
-    }, 1600)   
+    }, 1600);   
 
     })
 
 });
 
-function jump () {
+function jump() {
 
     if(dino.classList != 'jump') {
 
-        dino.classList.add('jump')
+        dino.classList.add('jump');
 
     } 
 
     setTimeout(function() {
 
-        dino.classList.remove('jump')
+        dino.classList.remove('jump');
 
     }, 400)
 
@@ -50,15 +50,14 @@ let isAlive = setInterval(function() {
 
     if(cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
 
-        alert('GAME OVER!')
+        alert('GAME OVER!');
 
-        cactus.classList.remove('cactusMov')
+        cactus.classList.remove('cactusMov');
 
-        setTimeout(function() {
+        clearTimeout(pointsTimer);
 
         points.innerHTML = 0;
-        
-        }, 1000) 
+
     }
 
 }, 50)

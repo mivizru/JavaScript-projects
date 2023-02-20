@@ -1,5 +1,5 @@
 body {
-    background-image: url(/img/pattern.jpg); 
+    background-image: url(img/pattern.jpg); 
     display: flex;
     height: 70vh;
     flex-direction: column;
@@ -33,7 +33,7 @@ body {
 #dino {
     width: 50px;
     height: 50px;
-    background-image: url(/img/dino.webp);
+    background-image: url(img/dino.webp);
     background-size: 50px 55px;
     position: relative;
     top: 150px;
