@@ -1,5 +1,5 @@
 body {
-    background-image: url(img/pattern.jpg); 
+    background-image: #fff; 
     display: flex;
     height: 70vh;
     flex-direction: column;

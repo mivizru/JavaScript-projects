@@ -11,17 +11,7 @@ document.addEventListener(e, function(e) {
 
     jump();
 
-    if(cactus.classList != 'cactusMov') {
-    
-        cactus.classList.add('cactusMov');
-
-    }
-
-    pointsTimer = setTimeout(function() {
-
-        points.innerHTML++;
-
-    }, 1600);   
+    (cactus.classList != 'cactusMov') ? cactus.classList.add('cactusMov') : '';
 
     })
 
@@ -29,24 +19,34 @@ document.addEventListener(e, function(e) {
 
 function jump() {
 
-    if(dino.classList != 'jump') {
+    (dino.classList != 'jump') ? dino.classList.add('jump') : '';
 
-        dino.classList.add('jump');
-
-    } 
-
-    setTimeout(function() {
-
-        dino.classList.remove('jump');
-
-    }, 400)
+    setTimeout( () => dino.classList.remove('jump'), 300);
 
 };
+
+function addPoints() {
+
+    if(addPoints.isRun) {
+
+        return false;
+
+    }
+
+    points.innerHTML++;
+    
+    addPoints.isRun = true;
+
+    setTimeout( () => addPoints.isRun = false, 500);
+
+}
 
 let isAlive = setInterval(function() {
 
     let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue('top'));
     let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue('left'));
+
+    (cactusLeft < 25) ? addPoints() : '';
 
     if(cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
 
@@ -54,10 +54,10 @@ let isAlive = setInterval(function() {
 
         cactus.classList.remove('cactusMov');
 
-        clearTimeout(pointsTimer);
-
         points.innerHTML = 0;
 
     }
 
-}, 50)
+    console.log('Кактус: ', cactusLeft);
+
+}, 60)
