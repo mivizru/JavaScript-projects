@@ -1,0 +1,12 @@
+body {
+   background-image: url(img/pattern.jpg);
+} 
+
+@media (max-width: 770px) {
+   #poster {
+      height: 300px;
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+   }
+}

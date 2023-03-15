@@ -58,6 +58,4 @@ let isAlive = setInterval(function() {
 
     }
 
-    console.log('Кактус: ', cactusLeft);
-
 }, 60)
